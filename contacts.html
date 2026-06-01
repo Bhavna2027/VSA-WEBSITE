@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | VSA Coaching Institute</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="logo">VSA<span>Coaching</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-tag">Get in Touch</span>
+      <h1>Contact Us</h1>
+      <p>Have a question? Fill in the form and our team will get back to you within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <!-- INFO -->
+      <div class="contact-info fade-in">
+        <h2>Talk to Us</h2>
+        <p>Whether you want to know about admissions, fee structure, or which course suits you — we're here to help.</p>
+
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <div>
+            <h4>Address</h4>
+            <p>VSA Coaching Institute, Pune, Maharashtra – 411001</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+919999999999">+91 99999 99999</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">✉️</span>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@vsacoaching.in">info@vsacoaching.in</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <div>
+            <h4>Office Hours</h4>
+            <p>Monday – Saturday: 8:00 AM – 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form-wrapper fade-in">
+        <div id="form-success" class="form-success" style="display:none;">
+          <span>✅</span>
+          <h3>Message Sent!</h3>
+          <p>We'll get back to you within 24 hours.</p>
+        </div>
+
+        <div id="enquiry-form">
+          <h2>Enquiry Form</h2>
+
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" placeholder="e.g. Aarav Sharma" />
+            <span class="field-error" id="name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" placeholder="e.g. 98765 43210" maxlength="10" />
+            <span class="field-error" id="phone-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="e.g. aarav@email.com" />
+            <span class="field-error" id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="course">Course Interested In *</label>
+            <select id="course">
+              <option value="">-- Select a Course --</option>
+              <option value="jee">JEE Mains &amp; Advanced</option>
+              <option value="neet">NEET UG</option>
+              <option value="mhtcet">MHT-CET</option>
+              <option value="hsc">HSC Board</option>
+              <option value="cbse">CBSE</option>
+              <option value="icse">ICSE</option>
+            </select>
+            <span class="field-error" id="course-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" rows="4" placeholder="Any specific questions or requirements..."></textarea>
+          </div>
+
+          <button class="btn btn-primary" id="submit-btn" onclick="handleSubmit()">
+            Send Enquiry
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">VSA<span>Coaching</span></div>
+        <p>Pune's trusted coaching institute for competitive &amp; board exam success.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>📍 Pune, Maharashtra</p>
+        <p>📞 <a href="tel:+919999999999">+91 99999 99999</a></p>
+        <p>✉️ <a href="mailto:info@vsacoaching.in">info@vsacoaching.in</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 VSA Coaching Institute, Pune. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function handleSubmit() {
+      // Clear previous errors
+      ['name','phone','email','course'].forEach(id => {
+        document.getElementById(id).classList.remove('input-error');
+        document.getElementById(id + '-error').textContent = '';
+      });
+
+      const name   = document.getElementById('name').value.trim();
+      const phone  = document.getElementById('phone').value.trim();
+      const email  = document.getElementById('email').value.trim();
+      const course = document.getElementById('course').value;
+      let valid = true;
+
+      if (!name) {
+        showError('name', 'Please enter your full name.');
+        valid = false;
+      }
+      if (!phone || !/^\d{10}$/.test(phone)) {
+        showError('phone', 'Please enter a valid 10-digit phone number.');
+        valid = false;
+      }
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('email', 'Please enter a valid email address.');
+        valid = false;
+      }
+      if (!course) {
+        showError('course', 'Please select a course.');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Simulate submission (replace with actual API call to backend)
+      const btn = document.getElementById('submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        document.getElementById('enquiry-form').style.display = 'none';
+        document.getElementById('form-success').style.display  = 'flex';
+      }, 1200);
+    }
+
+    function showError(fieldId, message) {
+      document.getElementById(fieldId).classList.add('input-error');
+      document.getElementById(fieldId + '-error').textContent = message;
+    }
+  </script>
+</body>
+</html>
