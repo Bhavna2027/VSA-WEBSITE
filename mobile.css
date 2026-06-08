@@ -1,0 +1,316 @@
+/* =============================================
+   VSA COACHING — MOBILE RESPONSIVENESS
+   mobile.css | Add <link> in all HTML files
+   ============================================= */
+
+/* ── GLOBAL MOBILE FIXES ── */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Better tap targets */
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Section spacing reduced on mobile */
+  section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+/* ── NAVBAR ── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 18px;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .hamburger {
+    display: flex !important;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 15, 28, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    max-height: none !important;
+    padding: 0 !important;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    overflow: hidden;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1.4rem !important;
+    padding: 10px 0 !important;
+    color: #fff !important;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+}
+
+/* ── HERO ── */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 90px 18px 50px !important;
+    text-align: center;
+    min-height: auto !important;
+    gap: 30px;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-num {
+    font-size: 1.6rem !important;
+  }
+
+  /* Hide decorative graphic on very small screens */
+  .hero-image-block {
+    display: none;
+  }
+}
+
+/* ── FEATURES GRID ── */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 22px 18px;
+  }
+}
+
+/* ── COURSE CARDS ── */
+@media (max-width: 768px) {
+  .course-cards {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+}
+
+/* ── TESTIMONIALS ── */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 24px 18px;
+  }
+
+  .testimonial-card p {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ── CTA SECTION ── */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 60px 18px !important;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .btn-lg {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* ── FOOTER ── */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 18px 0 !important;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+  }
+
+  .footer-brand p {
+    max-width: 100% !important;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 16px 0;
+  }
+}
+
+/* ── INNER PAGES — PAGE HERO ── */
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 80px 18px 40px !important;
+  }
+
+  .page-hero-content h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .page-hero-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ── COURSES DETAIL PAGE ── */
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .course-detail-card {
+    padding: 22px 18px;
+  }
+}
+
+/* ── RESULTS PAGE ── */
+@media (max-width: 768px) {
+  .rs-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px;
+  }
+
+  .toppers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ── ABOUT PAGE ── */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .faculty-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px;
+  }
+
+  .timeline {
+    padding-left: 18px !important;
+  }
+
+  .timeline-item::before {
+    left: -22px !important;
+  }
+
+  .tl-year {
+    font-size: 0.95rem;
+    min-width: 40px;
+  }
+}
+
+/* ── CONTACT PAGE ── */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .contact-form-wrapper {
+    padding: 22px 16px !important;
+  }
+
+  #submit-btn {
+    width: 100%;
+  }
+}
+
+/* ── EXTRA SMALL SCREENS (< 400px) ── */
+@media (max-width: 400px) {
+  .rs-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .faculty-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem !important;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem !important;
+  }
+}
