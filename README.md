@@ -29,25 +29,28 @@ Built as part of a daily internship from **1 June → 22 July 2025**.
 VSA-WEBSITE/
 ├── index.html          # Homepage
 ├── style.css           # Global styles
-├── mobile.css          # Mobile responsiveness (all pages)
+├── mobile.css          # Mobile responsiveness
 ├── script.js           # Global scripts
 ├── pages/
 │   ├── courses.html    # All courses detail page
 │   ├── results.html    # Toppers & year-wise results
 │   ├── about.html      # About us, faculty, timeline
 │   ├── contact.html    # Enquiry form with validation
-│   └── pages.css       # Shared styles for inner pages
+│   ├── pages.css       # Shared styles for inner pages
+│   ├── admin.html      # Admin panel — view enquiries
+│   ├── admin.css       # Admin panel styles
+│   └── admin.js        # Admin panel logic + API fetch
 └── backend/
-    ├── server.js       # Express server
-    ├── .env.example    # Environment variable template
+    ├── server.js
+    ├── .env.example
     ├── models/
-    │   ├── Contact.js  # MongoDB contact schema
-    │   └── User.js     # MongoDB user schema
+    │   ├── Contact.js
+    │   └── User.js
     ├── routes/
-    │   ├── auth.js     # Auth routes (login/register)
-    │   └── contact.js  # Contact form route
+    │   ├── auth.js
+    │   └── contact.js
     └── middleware/
-        └── authMiddleware.js  # JWT protect middleware
+        └── authMiddleware.js
 ```
 
 ---
@@ -56,38 +59,35 @@ VSA-WEBSITE/
 
 | Date | Work Done |
 |------|-----------|
-| 1 June 2025 | Repo setup, homepage (index.html), style.css, script.js — navbar, hero, courses section, testimonials, footer |
-| 2 June 2025 | Inner pages — courses.html, results.html, about.html, contact.html with form validation. Backend contact route + MongoDB model |
-| 3 June 2025 | Backend auth — register/login routes, User model, JWT middleware, protect route |
-| 4 June 2025 | Mobile responsiveness — dedicated mobile.css for all pages, hamburger fullscreen menu, responsive grids, touch-friendly tap targets |
+| 1 June 2025 | Repo setup, homepage, style.css, script.js — navbar, hero, courses, testimonials, footer |
+| 2 June 2025 | Inner pages — courses, results, about, contact with form validation. Backend contact route + MongoDB model |
+| 3 June 2025 | Backend auth — register/login routes, User model, JWT middleware |
+| 4 June 2025 | Mobile responsiveness — mobile.css for all pages, hamburger menu, responsive grids |
+| 9 June 2025 | Admin panel — enquiries dashboard with stats, search, course filter, pagination, demo mode |
 
 ---
 
 ## ✨ Features
 
-- ✅ Responsive navbar with hamburger menu (mobile)
-- ✅ Animated hero section with stats counter
-- ✅ Course detail pages for JEE, NEET, MHT-CET, HSC, CBSE, ICSE
-- ✅ Results page with toppers and year-wise table
-- ✅ About page with faculty cards and milestone timeline
+- ✅ Responsive navbar with hamburger menu
+- ✅ Animated hero with stats counter
+- ✅ Course, Results, About, Contact pages
 - ✅ Contact form with client-side validation
-- ✅ Backend API to save enquiries to MongoDB
+- ✅ Backend API — save enquiries to MongoDB
 - ✅ Auth system — register/login with JWT
-- ✅ Mobile responsive across all pages (320px → 768px)
-- ✅ Scroll animations and testimonial slider
+- ✅ Mobile responsive across all pages
+- ✅ Admin panel — view, search, filter enquiries
 
 ---
 
 ## ⚙️ How to Run Locally
 
-**Frontend:**
-Just open `index.html` in your browser.
+**Frontend:** Open `index.html` in your browser.
 
 **Backend:**
 ```bash
 cd backend
 npm install
-# Copy .env.example to .env and fill in your values
 cp .env.example .env
 npm start
 ```
