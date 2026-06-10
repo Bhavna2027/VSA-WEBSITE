@@ -1,0 +1,252 @@
+/* =============================================
+   VSA COACHING — ADMIN PANEL STYLES
+   pages/admin.css
+   ============================================= */
+
+/* Admin tag in navbar */
+.admin-tag {
+  background: var(--clr-accent);
+  color: #fff;
+  font-size: 0.6rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ── ADMIN STATS ── */
+.admin-stats {
+  padding: 50px 40px 0;
+  background: var(--clr-bg);
+}
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.admin-stat-card {
+  background: var(--clr-surface);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.admin-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(233,69,96,0.3);
+}
+.asc-icon { font-size: 2rem; flex-shrink: 0; }
+.asc-num {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  line-height: 1;
+}
+.asc-label {
+  font-size: 0.8rem;
+  color: var(--clr-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── ADMIN TABLE SECTION ── */
+.admin-table-section {
+  padding: 40px 40px 80px;
+  background: var(--clr-bg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-bar input {
+  flex: 1;
+  min-width: 220px;
+  background: var(--clr-surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--clr-text);
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  padding: 10px 16px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+.filter-bar input:focus { border-color: var(--clr-accent); }
+.filter-bar input::placeholder { color: var(--clr-muted); }
+
+.filter-bar select {
+  background: var(--clr-surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--clr-text);
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  padding: 10px 16px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.filter-bar select:focus { border-color: var(--clr-accent); }
+.filter-bar select option { background: var(--clr-surface); }
+
+/* Table */
+.table-wrapper {
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.07);
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 700px;
+}
+.admin-table th {
+  background: var(--clr-surface);
+  color: var(--clr-accent);
+  font-family: var(--ff-display);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  white-space: nowrap;
+}
+.admin-table td {
+  padding: 13px 16px;
+  color: var(--clr-text);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: middle;
+}
+.admin-table tbody tr:last-child td { border-bottom: none; }
+.admin-table tbody tr:hover { background: rgba(233,69,96,0.05); }
+
+/* Course badge in table */
+.course-badge {
+  display: inline-block;
+  background: rgba(233,69,96,0.12);
+  color: var(--clr-accent);
+  border: 1px solid rgba(233,69,96,0.25);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-family: var(--ff-display);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Message cell — truncate long text */
+.msg-cell {
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--clr-muted);
+  font-size: 0.82rem;
+}
+
+/* Date cell */
+.date-cell {
+  color: var(--clr-muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+/* ── LOADING / EMPTY / ERROR STATES ── */
+.loading-state,
+.empty-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  gap: 14px;
+}
+.loading-state p,
+.empty-state p,
+.error-state p {
+  color: var(--clr-muted);
+  font-size: 0.9rem;
+}
+.empty-state span,
+.error-state span { font-size: 3rem; }
+.empty-state h3,
+.error-state h3 {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  color: var(--clr-text);
+}
+.error-state code {
+  background: var(--clr-surface2);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--clr-accent);
+}
+
+/* Spinner */
+.spinner {
+  width: 40px; height: 40px;
+  border: 3px solid rgba(233,69,96,0.2);
+  border-top-color: var(--clr-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── PAGINATION ── */
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.page-btn {
+  background: var(--clr-surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--clr-text);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: var(--ff-display);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+.page-btn:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
+.page-btn.active { background: var(--clr-accent); border-color: var(--clr-accent); color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .admin-stats { padding: 40px 18px 0; }
+  .admin-table-section { padding: 30px 18px 60px; }
+  .filter-bar { flex-direction: column; }
+  .filter-bar input,
+  .filter-bar select { width: 100%; }
+  .admin-stats-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .admin-stats-grid { grid-template-columns: 1fr; }
+}

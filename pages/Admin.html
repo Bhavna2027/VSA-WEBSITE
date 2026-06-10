@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel | VSA Coaching Institute</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../mobile.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="logo">VSA<span>Coaching</span> <span class="admin-tag">Admin</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="admin.html" class="active">Dashboard</a></li>
+      <li><a href="../index.html">View Site</a></li>
+      <li><a href="#" id="logout-btn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <span class="section-tag">Admin</span>
+      <h1>Enquiries Dashboard</h1>
+      <p>View and manage all student enquiries submitted through the contact form.</p>
+    </div>
+  </section>
+
+  <!-- STATS ROW -->
+  <section class="admin-stats">
+    <div class="admin-stats-grid">
+      <div class="admin-stat-card fade-in">
+        <div class="asc-icon">📋</div>
+        <div>
+          <span class="asc-num" id="total-count">--</span>
+          <span class="asc-label">Total Enquiries</span>
+        </div>
+      </div>
+      <div class="admin-stat-card fade-in">
+        <div class="asc-icon">📐</div>
+        <div>
+          <span class="asc-num" id="jee-count">--</span>
+          <span class="asc-label">JEE Enquiries</span>
+        </div>
+      </div>
+      <div class="admin-stat-card fade-in">
+        <div class="asc-icon">🔬</div>
+        <div>
+          <span class="asc-num" id="neet-count">--</span>
+          <span class="asc-label">NEET Enquiries</span>
+        </div>
+      </div>
+      <div class="admin-stat-card fade-in">
+        <div class="asc-icon">📊</div>
+        <div>
+          <span class="asc-num" id="today-count">--</span>
+          <span class="asc-label">Today's Enquiries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS + TABLE -->
+  <section class="admin-table-section">
+
+    <!-- Filter bar -->
+    <div class="filter-bar fade-in">
+      <input type="text" id="search-input" placeholder="🔍  Search by name, phone or email..." />
+      <select id="course-filter">
+        <option value="">All Courses</option>
+        <option value="jee">JEE</option>
+        <option value="neet">NEET</option>
+        <option value="mhtcet">MHT-CET</option>
+        <option value="hsc">HSC</option>
+        <option value="cbse">CBSE</option>
+        <option value="icse">ICSE</option>
+      </select>
+      <button class="btn btn-outline" id="refresh-btn" onclick="loadEnquiries()">↻ Refresh</button>
+    </div>
+
+    <!-- Loading state -->
+    <div id="loading-state" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading enquiries...</p>
+    </div>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="empty-state" style="display:none;">
+      <span>📭</span>
+      <h3>No Enquiries Found</h3>
+      <p>No enquiries match your search or filter.</p>
+    </div>
+
+    <!-- Error state -->
+    <div id="error-state" class="error-state" style="display:none;">
+      <span>⚠️</span>
+      <h3>Could Not Load Enquiries</h3>
+      <p>Make sure the backend server is running on <code>localhost:5000</code></p>
+      <button class="btn btn-primary" onclick="loadEnquiries()">Try Again</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper fade-in" id="table-wrapper" style="display:none;">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Message</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="enquiry-tbody">
+          <!-- Rows injected by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">VSA<span>Coaching</span></div>
+        <p>Admin Panel — VSA Coaching Institute, Pune.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Quick Links</h4>
+        <p><a href="../index.html">View Website</a></p>
+        <p><a href="#" id="logout-footer">Logout</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 VSA Coaching Institute, Pune. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
