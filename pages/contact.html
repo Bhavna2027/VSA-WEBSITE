@@ -74,12 +74,16 @@
 
       <!-- FORM -->
       <div class="contact-form-wrapper fade-in">
-        <div id="form-success" class="form-success" style="display:none;">
-          <span>✅</span>
+
+        <!-- SUCCESS STATE -->
+        <div id="form-success" class="form-success form-success--hidden">
+          <span class="success-icon">✅</span>
           <h3>Message Sent!</h3>
           <p>We'll get back to you within 24 hours.</p>
+          <button class="btn btn-outline" id="reset-btn">Send Another Enquiry</button>
         </div>
 
+        <!-- FORM -->
         <div id="enquiry-form">
           <h2>Enquiry Form</h2>
 
@@ -121,11 +125,12 @@
           </div>
 
           <button class="btn btn-primary" id="submit-btn" onclick="handleSubmit()">
-            Send Enquiry
+            <span id="btn-text">Send Enquiry</span>
+            <span id="btn-spinner" class="btn-spinner" aria-hidden="true"></span>
           </button>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 
@@ -159,9 +164,16 @@
 
   <script src="../script.js"></script>
   <script>
+    const submitBtn  = document.getElementById('submit-btn');
+    const btnText    = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const formEl     = document.getElementById('enquiry-form');
+    const successEl  = document.getElementById('form-success');
+    const resetBtn   = document.getElementById('reset-btn');
+
     function handleSubmit() {
       // Clear previous errors
-      ['name','phone','email','course'].forEach(id => {
+      ['name', 'phone', 'email', 'course'].forEach(id => {
         document.getElementById(id).classList.remove('input-error');
         document.getElementById(id + '-error').textContent = '';
       });
@@ -191,21 +203,62 @@
 
       if (!valid) return;
 
-      // Simulate submission (replace with actual API call to backend)
-      const btn = document.getElementById('submit-btn');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
+      // Show loading state
+      setLoading(true);
 
+      // Simulate submission — replace setTimeout with real fetch() when backend is ready
       setTimeout(() => {
-        document.getElementById('enquiry-form').style.display = 'none';
-        document.getElementById('form-success').style.display  = 'flex';
-      }, 1200);
+        setLoading(false);
+        showSuccess();
+      }, 1400);
+    }
+
+    function setLoading(isLoading) {
+      submitBtn.disabled  = isLoading;
+      btnText.textContent = isLoading ? 'Sending...' : 'Send Enquiry';
+      btnSpinner.classList.toggle('btn-spinner--active', isLoading);
+    }
+
+    function showSuccess() {
+      // Fade form out
+      formEl.classList.add('form-fade-out');
+      setTimeout(() => {
+        formEl.style.display = 'none';
+        formEl.classList.remove('form-fade-out');
+        // Fade success in
+        successEl.classList.remove('form-success--hidden');
+        successEl.classList.add('form-success--visible');
+      }, 300);
+    }
+
+    function resetForm() {
+      // Clear all fields
+      ['name', 'phone', 'email', 'message'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('course').value = '';
+      ['name', 'phone', 'email', 'course'].forEach(id => {
+        document.getElementById(id).classList.remove('input-error');
+        document.getElementById(id + '-error').textContent = '';
+      });
+      setLoading(false);
+
+      // Fade success out, show form
+      successEl.classList.remove('form-success--visible');
+      successEl.classList.add('form-success--hidden');
+      setTimeout(() => {
+        formEl.style.display = 'block';
+        formEl.classList.add('form-fade-in');
+        setTimeout(() => formEl.classList.remove('form-fade-in'), 400);
+      }, 300);
     }
 
     function showError(fieldId, message) {
       document.getElementById(fieldId).classList.add('input-error');
       document.getElementById(fieldId + '-error').textContent = message;
     }
+
+    resetBtn.addEventListener('click', resetForm);
   </script>
 </body>
 </html>
